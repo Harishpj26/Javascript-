@@ -30,13 +30,28 @@
 // }
 
 //capturing or trickling
-document.getElementById("grandparent").addEventListener('click', () => {
+// document.getElementById("grandparent").addEventListener('click', () => {
+//     console.log("grandparent");
+// }, { capture: true });
+// document.getElementById("parent").addEventListener('click', () => {
+//     console.log("parent");
+// }, { capture: true });
+// document.getElementById("child").addEventListener('click', () => {
+//     console.log("child");
+// }, { capture: true });
+// function fun(event) {
+//     console.log(event);
+// }
+
+//stoping event from propagating
+document.getElementById("grandparent").addEventListener('click', (e) => {
     console.log("grandparent");
 }, { capture: true });
-document.getElementById("parent").addEventListener('click', () => {
+document.getElementById("parent").addEventListener('click', (e) => {
     console.log("parent");
+    e.stopPropagation();
 }, { capture: true });
-document.getElementById("child").addEventListener('click', () => {
+document.getElementById("child").addEventListener('click', (e) => {
     console.log("child");
 }, { capture: true });
 function fun(event) {
