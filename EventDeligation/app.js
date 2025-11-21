@@ -15,15 +15,30 @@
 // }
 
 // This is what it becomes by default ----bubbling
+
+// document.getElementById("grandparent").addEventListener('click', () => {
+//     console.log("grandparent");
+// }, { capture: false });
+// document.getElementById("parent").addEventListener('click', () => {
+//     console.log("parent");
+// }, { capture: false });
+// document.getElementById("child").addEventListener('click', () => {
+//     console.log("child");
+// }, { capture: false });
+// function fun(event) {
+//     console.log(event);
+// }
+
+//capturing or trickling
 document.getElementById("grandparent").addEventListener('click', () => {
     console.log("grandparent");
-}, { capture: false });
+}, { capture: true });
 document.getElementById("parent").addEventListener('click', () => {
     console.log("parent");
-}, { capture: false });
+}, { capture: true });
 document.getElementById("child").addEventListener('click', () => {
     console.log("child");
-}, { capture: false });
+}, { capture: true });
 function fun(event) {
     console.log(event);
 }
